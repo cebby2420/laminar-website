@@ -23,6 +23,8 @@ jobs:
       - name: Install, build, and upload your site output
         uses: withastro/action@v2
   deploy:
+    concurrency:
+      group: ${{ github.workflow }}
     needs: build
     runs-on: ubuntu-latest
     environment:
