@@ -6,6 +6,10 @@ images:
   - ./images/leviatan-2.jpg
   - ./images/leviatan-3.jpg
   - ./images/leviatan-4.jpg
+  - ./images/leviatan-5.jpg
+  - ./images/leviatan-6.jpg
+  - ./images/leviatan-7.jpg
+  - ./images/leviatan-8.jpg
 links:
   - label: 'Geekhack IC'
     url: 'https://geekhack.org/index.php?topic=118692.0'
