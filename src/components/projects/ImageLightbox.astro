@@ -3,7 +3,7 @@
 ---
 
 <div x-data class="fixed inset-0 z-10 overflow-y-auto" x-show="$store.lightbox.show">
-  <div class="flex justify-center min-w-screen max-w-screen max-h-screen min-h-screen">
+  <div class="min-w-screen max-w-screen flex max-h-screen min-h-screen justify-center">
     <div
       x-show="$store.lightbox.show"
       class="fixed inset-0 bg-primary-500/75 transition-opacity duration-300 ease-in-out dark:bg-primary-800/75"
@@ -15,7 +15,7 @@
     </div>
     <div
       x-show="$store.lightbox.show"
-      class="flex max-w-screen max-h-screen justify-center overflow-hidden rounded-lg"
+      class="max-w-screen flex max-h-screen justify-center overflow-hidden rounded-lg"
     >
       <div class="absolute right-4 top-4">
         <button

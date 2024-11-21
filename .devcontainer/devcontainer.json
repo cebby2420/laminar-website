@@ -9,7 +9,7 @@
     }
   },
   "forwardPorts": [4321],
-  "postCreateCommand": "npm install && npm run build",
+  "postCreateCommand": "npm install && npm run prepare && npm run build",
   "waitFor": "postCreateCommand",
   "postAttachCommand": {
     "Server": "npm run dev"
