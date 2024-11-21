@@ -1,0 +1,22 @@
+{
+  "name": "Astro Development",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22",
+  "workspaceFolder": "/workspaces/laminar-website",
+  "portsAttributes": {
+    "4321": {
+      "label": "Application",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "forwardPorts": [4321],
+  "postCreateCommand": "npm install && npm run build",
+  "waitFor": "postCreateCommand",
+  "postAttachCommand": {
+    "Server": "npm run dev"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["astro-build.astro-vscode", "esbenp.prettier-vscode"]
+    }
+  }
+}
