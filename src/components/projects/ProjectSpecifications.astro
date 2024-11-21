@@ -1,0 +1,52 @@
+---
+const { specifications } = Astro.props;
+---
+
+<div class="grid gap-12 lg:grid-cols-3 lg:gap-8">
+  <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">Specifications</h2>
+  <div class="grid grid-cols-2 gap-4 lg:col-span-2 lg:grid-cols-3">
+    <div class="flex flex-col gap-2">
+      <h3 class="text-lg font-medium">Form factor</h3>
+      <p class="text-sm">{specifications.formFactor}</p>
+    </div>
+    {
+      specifications.layouts?.length > 0 && (
+        <div class="flex flex-col gap-2">
+          <h3 class="text-lg font-medium">Layout{specifications.layouts.length > 1 && 's'}</h3>
+          <p class="text-sm">{specifications.layouts.join(', ')}</p>
+        </div>
+      )
+    }
+    <div class="flex flex-col gap-2">
+      <h3 class="text-lg font-medium">
+        Mounting style{specifications.mountingStyles.length > 1 && 's'}
+      </h3>
+      {
+        specifications.mountingStyles.length > 1 && (
+          <ul class="list-inside list-disc text-sm">
+            {specifications.mountingStyles.map((style) => (
+              <li>{style}</li>
+            ))}
+          </ul>
+        )
+      }
+      {
+        specifications.mountingStyles.length === 1 && (
+          <p class="text-sm">{specifications.mountingStyles[0]}</p>
+        )
+      }
+    </div>
+    <div class="flex flex-col gap-2">
+      <h3 class="text-lg font-medium">Front height</h3>
+      <p class="text-sm">{specifications.frontHeight}mm</p>
+    </div>
+    <div class="flex flex-col gap-2">
+      <h3 class="text-lg font-medium">Typing angle</h3>
+      <p class="text-sm">{specifications.typingAngle}°</p>
+    </div>
+    <div class="flex flex-col gap-2">
+      <h3 class="text-lg font-medium">Weight</h3>
+      <p class="text-sm">approx. {specifications.weight}kg built</p>
+    </div>
+  </div>
+</div>

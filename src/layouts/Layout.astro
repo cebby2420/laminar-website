@@ -1,0 +1,45 @@
+---
+import '@fontsource/inter/latin-400.css';
+import '@fontsource/inter/latin-500.css';
+import { ClientRouter } from 'astro:transitions';
+import Footer from '@components/layout/Footer.astro';
+import Header from '@components/layout/Header.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" x-cloak x-data :class="{ 'dark': $store.theme.isDark }">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ClientRouter fallback="none" />
+    <script>
+      document.addEventListener('astro:after-swap', () => {
+        window.scrollTo({ left: 0, top: 0, behavior: 'instant' });
+      });
+    </script>
+  </head>
+  <body
+    class="bg-primary-50 text-primary-950 antialiased transition dark:bg-primary-950 dark:text-primary-200"
+  >
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <style is:global>
+      [x-cloak] {
+        display: none !important;
+      }
+    </style>
+  </body>
+</html>

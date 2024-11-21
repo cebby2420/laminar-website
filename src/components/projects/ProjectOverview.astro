@@ -1,0 +1,54 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('projects');
+const columns = projects.reduce<[typeof projects, typeof projects]>(
+  (acc, curr, i) => {
+    if (i % 2 === 0) {
+      acc[0].push(curr);
+    } else {
+      acc[1].push(curr);
+    }
+    return acc;
+  },
+  [[], []]
+);
+---
+
+<section class="py-16 pt-0 sm:py-20 sm:pt-0">
+  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="flex flex-col gap-8 lg:gap-12">
+      <div class="grid gap-8 lg:grid-cols-2">
+        {
+          columns.map((column, index) => {
+            return (
+              <div class:list={['space-y-8', index === 1 && 'lg:mt-16']}>
+                {column.map((value) => (
+                  <a
+                    href={`/projects/${value.id}`}
+                    class="relative flex h-48 flex-col gap-12 overflow-hidden rounded-3xl px-6 py-6"
+                  >
+                    <div class="z-10 h-full w-full text-white">
+                      <h3 class="text-xl font-medium">{value.data.name}</h3>
+                      <p class="text-sm">{value.data.subtitle}</p>
+                    </div>
+                    <div class="absolute left-0 top-0 z-0 h-full w-full">
+                      <div class="absolute left-0 top-0 h-full w-full bg-primary-400/40 dark:bg-primary-800/40" />
+                      <Image
+                        src={value.data.images[0]}
+                        width={700}
+                        alt={value.data.name}
+                        class="h-full w-full rounded-3xl object-cover"
+                      />
+                    </div>
+                  </a>
+                ))}
+              </div>
+            );
+          })
+        }
+      </div>
+    </div>
+  </div>
+</section>

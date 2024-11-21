@@ -1,0 +1,60 @@
+---
+
+---
+
+<div x-data class="fixed inset-0 z-10 overflow-y-auto" x-show="$store.lightbox.show">
+  <div class="flex justify-center min-w-screen max-w-screen max-h-screen min-h-screen">
+    <div
+      x-show="$store.lightbox.show"
+      class="fixed inset-0 bg-primary-500/75 transition-opacity duration-300 ease-in-out dark:bg-primary-800/75"
+      x-transition:enter-start="opacity-0"
+      x-transition:enter-end="opacity-100"
+      x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-0"
+    >
+    </div>
+    <div
+      x-show="$store.lightbox.show"
+      class="flex max-w-screen max-h-screen justify-center overflow-hidden rounded-lg"
+    >
+      <div class="absolute right-4 top-4">
+        <button
+          type="button"
+          class="focus:ring-none rounded-md text-primary-700 hover:text-primary-900 focus:outline-none dark:text-primary-500 dark:hover:text-primary-300"
+          x-show="$store.lightbox.show"
+        >
+          <span class="sr-only">Close</span>
+          <svg
+            class="h-6 w-6"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div
+        class="relative flex max-h-fit max-w-full transform justify-center transition-all duration-300 ease-in-out sm:py-8"
+        x-show="$store.lightbox.show"
+        x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+        x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+        x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+        x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+      >
+        <img
+          @click="$store.lightbox.show = false"
+          @click.away="$store.lightbox.show = false"
+          class="max-h-full max-w-full object-contain shadow-xl md:object-scale-down"
+          x-bind:src="$store.lightbox.src"
+        />
+      </div>
+    </div>
+  </div>
+</div>

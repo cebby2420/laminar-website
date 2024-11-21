@@ -1,0 +1,19 @@
+---
+import { Image, ImageMetadata } from 'astro:assets';
+
+const { images, name } = Astro.props;
+---
+<div class="columns-2 gap-8 space-y-8" x-data>
+  {
+    images.map((image: ImageMetadata) => (
+      <Image
+        src={image}
+        alt={name}
+        class="cursor-pointer rounded-3xl"
+        widths={[200, 400, 600]}
+        sizes={`(max-width: 360px) 200px, (max-width: 720px) 400px, (max-width: 1080px) 640px`}
+        @click="$store.lightbox.open($event.target.src)"
+      />
+    ))
+  }
+</div>

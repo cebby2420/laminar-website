@@ -1,0 +1,49 @@
+---
+import { Image, ImageMetadata } from 'astro:assets';
+import ProjectSpecifications from './ProjectSpecifications.astro';
+import ProjectLinks from './ProjectLinks.astro';
+import ProjectVendors from './ProjectVendors.astro';
+import ImageLightbox from './ImageLightbox.astro';
+import ProjectResources from './ProjectResources.astro';
+import ProjectDescription from './ProjectDescription.astro';
+import ProjectImages from './ProjectImages.astro';
+const { project } = Astro.props;
+---
+
+<ImageLightbox />
+
+<div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+  <section class="py-8 sm:py-16">
+    <ProjectDescription project={project} />
+
+    {project.data.links?.length > 0 && <ProjectLinks links={project.data.links} />}
+  </section>
+
+  {
+    project.data.specifications && (
+      <section class="py-8 sm:py-16">
+        <ProjectSpecifications specifications={project.data.specifications} />
+      </section>
+    )
+  }
+
+  <section class="py-8 sm:py-16">
+    <ProjectImages images={project.data.images} name={project.data.name} />
+  </section>
+
+  {
+    project.data.vendors && project.data.vendors.length > 0 && (
+      <section class="py-8 sm:py-16">
+        <ProjectVendors vendors={project.data.vendors} />
+      </section>
+    )
+  }
+
+  {
+    project.data.resources && (
+      <section class="py-8 sm:py-16">
+        <ProjectResources resources={project.data.resources} />
+      </section>
+    )
+  }
+</div>

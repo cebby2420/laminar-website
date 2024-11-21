@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+
+import Heading from '@components/projects/Heading.astro';
+import ProjectDetails from '@components/projects/ProjectDetails.astro';
+import Layout from '@layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { project: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+---
+
+<Layout title={project.data.name + ' · Projects · Laminar Design'}>
+  <Heading title={project.data.name} />
+  <ProjectDetails project={project} />
+</Layout>

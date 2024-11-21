@@ -1,0 +1,29 @@
+---
+import { render } from 'astro:content';
+
+const { project } = Astro.props;
+
+const { Content } = await render(project);
+---
+
+<div class="content-container">
+  <Content />
+</div>
+
+<style>
+  .content-container {
+    @apply flex flex-col gap-4;
+
+    h1 {
+      @apply text-4xl font-medium tracking-tight;
+    }
+
+    h2 {
+      @apply text-3xl font-medium tracking-tight;
+    }
+
+    h3 {
+      @apply text-lg font-medium;
+    }
+  }
+</style>

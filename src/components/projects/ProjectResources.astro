@@ -1,0 +1,42 @@
+---
+const { resources } = Astro.props;
+---
+
+<div class="grid gap-12 lg:grid-cols-3 lg:gap-8">
+  <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">Resources</h2>
+  <div class="grid grid-cols-1 gap-4 lg:col-span-2 lg:grid-cols-2">
+    <div class="flex flex-col gap-2">
+      <h3 class="text-lg font-medium">Files</h3>
+      <ul class="list-inside text-sm leading-8">
+        {
+          resources.downloads &&
+            resources.downloads.map((download: (typeof resources.downloads)[number]) => (
+              <li>
+                <strong>{download.label}:</strong>{' '}
+                <a
+                  class="text-sm hover:underline"
+                  href={download.url}
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Download
+                </a>
+              </li>
+            ))
+        }
+      </ul>
+    </div>
+    {
+      resources.hardware && (
+        <div class="flex flex-col gap-2">
+          <h3 class="text-lg font-medium">Hardware</h3>
+          <ul class="list-inside text-sm leading-8">
+            {resources.hardware.map((hardware: (typeof resources.hardware)[number]) => (
+              <li>{hardware}</li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
+  </div>
+</div>

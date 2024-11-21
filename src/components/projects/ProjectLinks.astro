@@ -1,0 +1,28 @@
+---
+const { links } = Astro.props;
+---
+
+<div class="mt-6 flex flex-row gap-3">
+  {
+    links.map((link: (typeof links)[number]) => (
+      <a
+        href={link.url}
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center justify-center rounded-full border border-transparent bg-primary-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-primary-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 dark:bg-primary-400 dark:text-primary-950 dark:hover:bg-primary-300 dark:focus-visible:outline-primary-400"
+      >
+        {link.label}
+
+        <svg
+          class="ml-1 h-4 w-4"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z" />
+        </svg>
+      </a>
+    ))
+  }
+</div>
