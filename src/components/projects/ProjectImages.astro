@@ -4,7 +4,7 @@ import { Image, ImageMetadata } from 'astro:assets';
 const { images, name } = Astro.props;
 ---
 
-<div class="columns-2 gap-8 space-y-8" x-data>
+<div class="columns-2 gap-4 space-y-4 sm:gap-8 sm:space-y-8" x-data>
   {
     images.map((image: ImageMetadata) => (
       <Image

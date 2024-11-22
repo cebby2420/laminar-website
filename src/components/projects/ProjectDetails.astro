@@ -16,7 +16,7 @@ const { project } = Astro.props;
   <section class="py-8 sm:py-16">
     <ProjectDescription project={project} />
 
-    {project.data.links?.length > 0 && <ProjectLinks links={project.data.links} />}
+    {project.data.links.length > 0 && <ProjectLinks links={project.data.links} />}
   </section>
 
   {
@@ -32,7 +32,7 @@ const { project } = Astro.props;
   </section>
 
   {
-    project.data.vendors && project.data.vendors.length > 0 && (
+    project.data.vendors.length > 0 && (
       <section class="py-8 sm:py-16">
         <ProjectVendors vendors={project.data.vendors} />
       </section>

@@ -1,44 +1,13 @@
 ---
 name: 'Devoción'
 subtitle: 'Plateless FRL TKL'
+status: 'In development'
 images:
   - ./images/devocion-1.jpg
   - ./images/devocion-2.jpg
-links:
-  - label: 'Geekhack'
-    url: 'https://geekhack.org/index.php?topic=117151.0'
+  - ./images/devocion-3.jpg
 specifications:
   formFactor: 'FRL TKL'
-  layouts:
-    - 'HHKB'
-    - 'WKL'
-    - 'WK'
-  mountingStyles:
-    - 'Plateless leaf-spring gasket'
-  frontHeight: 18 # in mm
-  typingAngle: 6.5 # in degrees
-  weight: 3 # in kg
-resources:
-  downloads:
-    - label: 'Firmware (Prototypes)'
-      url: https://github.com/laminar-keeb/firmware
-    - label: 'Firmware (R0)'
-      url: https://github.com/laminar-keeb/firmware
-    - label: 'Firmware (R1)'
-      url: https://github.com/laminar-keeb/firmwarev
-    - label: 'VIA JSON (Prototypes)'
-      url: https://github.com/laminar-keeb/via
-    - label: 'VIA JSON (R0)'
-      url: https://github.com/laminar-keeb/via
-    - label: 'VIA JSON (R1)'
-      url: https://github.com/laminar-keeb/via
-    - label: 'Plate files'
-      url: https://github.com/laminar-keeb/plate-files
-  hardware:
-    - 'Case screws: M2x6mm or M2x7mm, countersunk'
-    - 'PCB screws: M2x3mm, countersunk'
-    - 'Standoffs: M2x5mm, hex'
-    - 'Feet: SKUF'
 ---
 
-Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
+The Devoción is a premium Function Row-less (FRL) TKL keyboard currently in development, aiming to deliver a seamless blend of aesthetics, innovation, and acoustics. Designed for those who appreciate the balance of a compact form factor and full functionality, Devoción is set to be a standout addition to any collection.

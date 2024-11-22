@@ -1,6 +1,7 @@
 ---
 name: 'Leviatán'
-subtitle: '60% with multiple mounting options'
+subtitle: 'Multi-mount 60%'
+status: 'Completed'
 images:
   - ./images/leviatan-1.jpg
   - ./images/leviatan-2.jpg
@@ -29,25 +30,21 @@ specifications:
   weight: 2.4 # in kg
 resources:
   downloads:
-    - label: 'Firmware (Prototypes)'
-      url: https://github.com/laminar-keeb/firmware
     - label: 'Firmware (R0)'
-      url: https://github.com/laminar-keeb/firmware
+      url: assets/firmware/leviatan-r0-vial.bin
+    - label: 'Firmware (R0) source'
+      url: https://github.com/Sleepdealr/vial-qmk/tree/b2873ba1b097eae77c57ad55d5b9a45884ddf301/keyboards/sleepdealer/leviathan
     - label: 'Firmware (R1)'
-      url: https://github.com/laminar-keeb/firmwarev
-    - label: 'VIA JSON (Prototypes)'
-      url: https://github.com/laminar-keeb/via
-    - label: 'VIA JSON (R0)'
-      url: https://github.com/laminar-keeb/via
+      url: assets/firmware/leviatan-r1-via.bin
+    - label: 'Firmware (R1) source'
+      url: https://github.com/qmk/qmk_firmware/tree/57be4871616ee9a8fe042f6186010d436ec7d4b1/keyboards/cannonkeys/leviatan
     - label: 'VIA JSON (R1)'
-      url: https://github.com/laminar-keeb/via
-    - label: 'Plate files'
-      url: https://github.com/laminar-keeb/plate-files
+      url: assets/via-spec/leviatan-r1.json
   hardware:
-    - 'Case screws: M2x6mm or M2x7mm, countersunk'
-    - 'PCB screws: M2x3mm, countersunk'
-    - 'Standoffs: M2x5mm, hex'
-    - 'Feet: SKUF'
+    - 30A hardness, 1.5 mm Poron gaskets
+    - AKB adhesive feet, available at CannonKeys
+    - M3x10 front screws, M3x12 back screws
+    - Fly DB, with Molex-to-Molex cable
 vendors:
   - name: 'Cannonkeys'
     url: 'https://cannonkeys.com/products/leviatan'
@@ -59,4 +56,8 @@ vendors:
     url: 'https://cannonkeys.com/products/leviatan'
 ---
 
-Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
+The Leviatán is a versatile 60% keyboard designed for enthusiasts who value customization and sound tuning. Its defining feature is the ability to choose between mounting styles, including top mount and PCB mount, each catering to different preferences for feel and acoustics.
+
+The board supports a tray-style plate that overlays the PCB, allowing further tuning of the board's flex and sound. Whether you prefer a completely plateless build or the refined resonance of a half-plate setup, the Leviatán caters to all.
+
+The Leviatán is not just a keyboard—it’s a playground for tuning enthusiasts. Whether you lean towards traditional top mount builds or want to experiment with the nuanced sound profiles of the PCB mount system, this board offers something for everyone.

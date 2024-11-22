@@ -1,6 +1,7 @@
 ---
 name: 'Ziggurat'
 subtitle: 'Bold 65% XT'
+status: 'Completed'
 images:
   - ./images/ziggurat-1.jpg
   - ./images/ziggurat-2.jpg
@@ -24,25 +25,12 @@ specifications:
   weight: 3 # in kg
 resources:
   downloads:
-    - label: 'Firmware (Prototypes)'
-      url: https://github.com/laminar-keeb/firmware
-    - label: 'Firmware (R0)'
-      url: https://github.com/laminar-keeb/firmware
-    - label: 'Firmware (R1)'
-      url: https://github.com/laminar-keeb/firmwarev
-    - label: 'VIA JSON (Prototypes)'
-      url: https://github.com/laminar-keeb/via
-    - label: 'VIA JSON (R0)'
-      url: https://github.com/laminar-keeb/via
-    - label: 'VIA JSON (R1)'
-      url: https://github.com/laminar-keeb/via
-    - label: 'Plate files'
-      url: https://github.com/laminar-keeb/plate-files
-  hardware:
-    - 'Case screws: M2x6mm or M2x7mm, countersunk'
-    - 'PCB screws: M2x3mm, countersunk'
-    - 'Standoffs: M2x5mm, hex'
-    - 'Feet: SKUF'
+    - label: 'Firmware'
+      url: assets/firmware/ziggurat-via.bin
+    - label: 'Firmware source'
+      url: https://github.com/qmk/qmk_firmware/tree/57be4871616ee9a8fe042f6186010d436ec7d4b1/keyboards/wolf/ziggurat
+    - label: 'VIA JSON'
+      url: assets/via-spec/ziggurat.json
 vendors:
   - name: 'Eloquent Clicks'
     url: 'https://eloquentclicks.com/products/ziggurat-plateless-leaf-spring-pcb-mount-65-xt'

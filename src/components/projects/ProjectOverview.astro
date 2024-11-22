@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 
 const projects = await getCollection('projects');
+projects.sort((a, b) => a.data.name.localeCompare(b.data.name));
 const columns = projects.reduce<[typeof projects, typeof projects]>(
   (acc, curr, i) => {
     if (i % 2 === 0) {
@@ -31,7 +32,9 @@ const columns = projects.reduce<[typeof projects, typeof projects]>(
                   >
                     <div class="z-10 h-full w-full text-white">
                       <h3 class="text-xl font-medium">{value.data.name}</h3>
-                      <p class="text-sm">{value.data.subtitle}</p>
+                      <p class="text-sm">
+                        {value.data.subtitle} · {value.data.status}
+                      </p>
                     </div>
                     <div class="absolute left-0 top-0 z-0 h-full w-full">
                       <div class="absolute left-0 top-0 h-full w-full bg-primary-400/40 dark:bg-primary-800/40" />
